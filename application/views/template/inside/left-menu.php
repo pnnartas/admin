@@ -1,4 +1,5 @@
-    <div class="sidebar-nav">
+<script type="text/javascript" src="<?=base_url();?>/global/js/left-menu/left-menu.js"></script>
+<div class="sidebar-nav">
         <form class="search form-inline">
             <input type="text" placeholder="Search...">
         </form>
@@ -13,7 +14,7 @@
 
         </ul>
 
-        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Kullanıcı Hesapları</a>
+        <a href="#accounts-menu" id="change_user" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Kullanıcı Hesapları</a>
         <ul id="accounts-menu" class="nav nav-list collapse">
             <li ><a href="<?=site_url();?>/user/change_user">Kullanıcı Şifre Değiştir</a></li>
             <li ><a href="<?=base_url();?>/user/create_user">Kullanıcı oluştur</a></li>
