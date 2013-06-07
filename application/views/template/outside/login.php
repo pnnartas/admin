@@ -21,8 +21,9 @@
                 data: dataString,
                 success: function(done) {
                     //alert(done);
-                    if(done >0){
-                        $("#LoginForm").attr("action", "<?=site_url();?>/kontrol/index");
+                    if(done >0){                                  
+                        //$("#LoginForm").attr("action", "<?=site_url();?>/kontrol/index");
+                         window.open( "<?=site_url();?>/kontrol/index", "Admin Panel","fullscreen=yes","width=auto","height=auto");
                         $("#LoginForm").submit();
                         $('#alert').css("display","none");
                     }else{
@@ -33,7 +34,7 @@
             return false;
         }
         });
-    });
+    }); 
 
 </script>
 <style>
