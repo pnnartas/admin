@@ -21,9 +21,15 @@
                 data: dataString,
                 success: function(done) {
                     //alert(done);
-                    if(done >0){                                  
-                        //$("#LoginForm").attr("action", "<?=site_url();?>/kontrol/index");
-                         window.open( "<?=site_url();?>/kontrol/index", "Admin Panel","fullscreen=yes","width=auto","height=auto");
+                    if(done >0){
+                        winWidth = 400; // sets a default width for browsers who do not understand screen.width below
+                        winheight = 400; // ditto for height
+
+                        if (screen){ // weeds out older browsers who do not understand screen.width/screen.height
+                            winWidth = screen.width;
+                            winHeight = screen.height;
+                        }
+                        window.open('<?=site_url();?>/kontrol/index','Admin Panel','toolbar=no,location=no,scrollbars=yes,resizable=yes,width='+winWidth+',height='+winHeight+',left=0,top=0');
                         $("#LoginForm").submit();
                         $('#alert').css("display","none");
                     }else{
