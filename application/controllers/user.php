@@ -4,20 +4,51 @@ class User extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->helper('url');
-        $this->load->library('session');
-        $this->load->library('parser');
-        $this->output->enable_profiler(false);
+        $this->rewrite->setURL();
+
 
     }
+
+
 
     function change_user() {
-        $data['title']='ANA SAYFA';
-        $data['solMenu'] =$this->load->view('template/inside/left-menu',$data,true);
-        $data['content'] = $this->load->view('user/change_user',$data,true);
-        $this->load->view('template/inside/template', $data);
+        $nameName=  $this->users->userName($this->session->userdata('user_id'));
+
+        $data['query']=$nameName;
+        $data = array(
+            'title' => 'ANA SAYFA',
+            'solMenu' => $this->load->view('template/inside/left-menu','',TRUE),
+            'content' =>$this->load->view('user/change_user',$data,TRUE),
+            'footer' =>$this->load->view('template/inside/footer','',TRUE),
+            'username' =>$nameName->email
+
+        );
+
+        if (isset($_POST['processtype']) && $_POST['processtype'] == 'save_form') {
+
+            $User_ID=$this->session->userdata('user_id');
+            $this->users->UserProfilUpdate($User_ID);
+            header("Location: $User_ID");
+        }
+
+        $this->parser->parse('template/inside/template', $data);
 
     }
+
+    function create_user() {
+        $nameName=  $this->users->userName($this->session->userdata('user_id'));
+        $data = array(
+            'title' => 'ANA SAYFA',
+            'solMenu' => $this->load->view('template/inside/left-menu','',TRUE),
+            'content' =>$this->load->view('template/inside/anasayfa','',TRUE),
+            'footer' =>$this->load->view('template/inside/footer','',TRUE),
+            'username' =>$nameName->email
+
+        );
+        $this->parser->parse('template/inside/template', $data);
+
+    }
+
 
 }
 

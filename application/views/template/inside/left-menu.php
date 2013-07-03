@@ -4,9 +4,9 @@
             <input type="text" placeholder="Search...">
         </form>
 
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Ana Sayfa</a>
-        <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="index.html">Home</a></li>
+        <a href="#kontrol" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Ana Sayfa</a>
+        <ul id="kontrol" class="nav nav-list collapse">
+            <li><a href="<?=site_url();?>kontrol/index/">Home</a></li>
             <li ><a href="users.html">Sample List</a></li>
             <li ><a href="user.html">Sample Item</a></li>
             <li ><a href="media.html">Media</a></li>
@@ -14,18 +14,18 @@
 
         </ul>
 
-        <a href="#accounts-menu" id="change_user" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Kullanıcı Hesapları</a>
-        <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="<?=site_url();?>/user/change_user">Kullanıcı Şifre Değiştir</a></li>
-            <li ><a href="<?=base_url();?>/user/create_user">Kullanıcı oluştur</a></li>
+        <a href="#user" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Kullanıcı Hesapları</a>
+        <ul id="user" class="nav nav-list collapse">
+            <li ><a href="<?=site_url();?>user/change_user/">Kullanıcı Şifre Değiştir</a></li>
+            <li ><a href="<?=base_url();?>user/create_user/">Kullanıcı oluştur</a></li>
         </ul>
 
         <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
         <ul id="error-menu" class="nav nav-list collapse">
-            <li ><a href="403.html">403 page</a></li>
-            <li ><a href="404.html">404 page</a></li>
-            <li ><a href="500.html">500 page</a></li>
-            <li ><a href="503.html">503 page</a></li>
+            <li><a href="403.html">403 page</a></li>
+            <li><a href="404.html">404 page</a></li>
+            <li><a href="500.html">500 page</a></li>
+            <li><a href="503.html">503 page</a></li>
         </ul>
 
         <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>

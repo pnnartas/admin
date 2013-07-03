@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>{title}</title>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -47,15 +47,15 @@
                 <ul class="nav pull-right">
                     <li id="fat-menu" class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> Jack Smith
+                            <i class="icon-user"></i>{username}
                             <i class="icon-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#">My Account</a></li>
+                            <li><a tabindex="-1" href="#">{username}</a></li>
                             <li class="divider"></li>
                             <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
-                            <li class="divider visible-phone"></li>
-                            <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                            <li class="divider visible-phone">adasd</li>
+                            <li><a tabindex="-1" href="<?=base_url();?>begin/logout">Çıkış</a></li>
                         </ul>
                     </li>
 
@@ -63,15 +63,29 @@
                 <a class="brand" href="index.html"><span class="first">Admin</span> <span class="second">Panel</span></a>
         </div>
     </div>
-    <?=$solMenu;?>
+    {solMenu}
 	<div class="content">
-    <?=$content;?>  
- </div>
-	  <script src="<?=base_url();?>global/js/bootstrap.js"></script>
+    {content}
+    {footer}
+
+    <script src="<?=base_url();?>global/js/bootstrap.js"></script>
     <script type="text/javascript">
         $("[rel=tooltip]").tooltip();
         $(function() {
             $('.demo-cancel-click').click(function(){return false;});
+        });
+
+
+        $(document).ready(function(){
+
+
+        var segment = '<?=$_GET['segment3']?>';
+
+         //   alert(segment);
+        $("#"+segment ).addClass('collapse');
+            $("#"+segment ).addClass('in');
+        $("#"+ segment +" li").addClass("active");
+
         });
     </script>
 

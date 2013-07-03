@@ -1321,21 +1321,27 @@ textarea::-webkit-input-placeholder {
 }
 .input-mini {
   width: 60px;
+  cursor:pointer;
 }
 .input-small {
   width: 90px;
+  cursor:pointer;
 }
 .input-medium {
   width: 150px;
+  cursor:pointer;
 }
 .input-large {
   width: 210px;
+  cursor:pointer;
 }
 .input-xlarge {
   width: 270px;
+  cursor:pointer;
 }
 .input-xxlarge {
   width: 530px;
+  cursor:pointer;
 }
 input[class*="span"],
 select[class*="span"],

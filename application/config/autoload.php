@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('template');
+$autoload['libraries'] = array('template','session','rewrite','database','parser');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('template');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+$autoload['helper'] = array('url');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array('users');
 
 
 /* End of file autoload.php */
@@ -117,4 +117,4 @@ $autoload['model'] = array();
 
 
 # Load the template library when the spark is loaded
-$autoload['libraries'] = array('session');
+//$autoload['libraries'] = array('session');
