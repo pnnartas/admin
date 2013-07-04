@@ -33,8 +33,8 @@
                     </form>
                 </div>
                 <div class="tab-pane fade" id="profile">
-                    <form id="tab2">
-                        <label>New Password</label>
+                    <form id="tab2" method="post" action="<?=base_url();?>">
+                        <label>Yeni Password</label>
                         <input type="password" class="input-xlarge">
                         <div>
                             <button class="btn btn-primary">Update</button>

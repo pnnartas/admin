@@ -5,7 +5,12 @@ class User extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->rewrite->setURL();
-
+        $sc = $this->session->userdata('user_id');
+        if ($sc != NULL && $sc>0 && $sc!="" &&isset($sc)){
+            //giriş yaptı session_id var
+        }else{
+            redirect('begin/index');
+        }
 
     }
 
@@ -29,6 +34,7 @@ class User extends CI_Controller {
             $User_ID=$this->session->userdata('user_id');
             $this->users->UserProfilUpdate($User_ID);
             header("Location: $User_ID");
+          //  $this->output->set_header();
         }
 
         $this->parser->parse('template/inside/template', $data);
