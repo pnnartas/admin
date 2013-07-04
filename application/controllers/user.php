@@ -25,7 +25,7 @@ class User extends CI_Controller {
             'solMenu' => $this->load->view('template/inside/left-menu','',TRUE),
             'content' =>$this->load->view('user/change_user',$data,TRUE),
             'footer' =>$this->load->view('template/inside/footer','',TRUE),
-            'username' =>$nameName->email
+            'username' =>$nameName->name
 
         );
 

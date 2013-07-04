@@ -28,7 +28,7 @@ class users extends CI_Model{
 
     function userName($user_id) {
 
-        $q ="SELECT CONCAT(name, ' ', surname) as name,email,name as ad ,surname,adres,username from users where user_id='".$user_id."' and active='1'";
+        $q ="SELECT CONCAT(name, ' ', surname) as name,email,name as ad ,surname,adres,username,password from users where user_id='".$user_id."' and active='1'";
         $query = $this->db->query($q);
 
         $row = $query->row();
@@ -44,6 +44,7 @@ class users extends CI_Model{
             'surname'=>$this->input->post('soyad'),
             'email'=>$this->input->post('email'),
             'adres'=>$this->input->post('adres'),
+            'password'=>base64_encode($this->input->post('password')),
         );
         $this->db->where('user_id',$this->input->post('user_id'));
         $this->db->update('users',$data);
